@@ -11,6 +11,7 @@
 %% Useful packages
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsfonts}
 \usepackage{float}
 \usepackage{graphicx}
 
@@ -37,20 +38,56 @@
 \subsection{Background Work}
 \normalsize
 \paragraph{Set Notation}\mbox{}\\
-\Large
+\large
 \[ A=\{\text{Colours of the rainbow}\} \]
-\[ Red \underset{\mathclap{\substack{\uparrow \\ \text{Is an element of.}}}}{∈} A \]
+\[ Red \underset{\mathclap{\substack{\uparrow \\ \text{Is an element of.}}}}{\in} A \]
 \[ \text{or } B\{2,5,11,17\}\]
 \[ \text{or } C =\{x \underset{\mathclap{\substack{\uparrow \\ \text{Such that.}}}}{:} x>2 \}\]
 
 \normalsize
 \paragraph{Special sets}\mbox{}\\ \\
-\Linebreak
 \large
-\mathbb{R}=\{\text{Real numbers}\} \\
-\mathbb{C}=\{\text{Complex numbers}\}  \\
-\mathbb{Z}=\{\text{Integers}\} \\
-\mathbb{Z^+}=\{\text{Real numbers}\} \\
+$\mathbb{R}$=\{\text{Real numbers}\} \\
+$\mathbb{C}$=\{\text{Complex numbers}\}  \\
+$\mathbb{Z}$=\{\text{Integers}\} \\
+$\mathbb{Z^+}$=\{\text{Real numbers}\}  \\
 \[ \big[ \text{also } \mathbb{N}=\{\text{Natural numbers}\} \big] \]} \\
-\mathbb{Q}=\{\text{Rational numbers}\} \\
+$\mathbb{Q}$=\{\text{Rational numbers}\}
+
+\normalsize
+\paragraph{Binary Operations}\mbox{}\\ \\
+The operation, * , acts on the two elements of a set to produce a unique "product" (i.e. outcome).
+
+\paragraph{Properties of Binary Operations}\mbox{}
+\begin{enumerate}
+\item
+  Commutivity: an operation, *, is communative iff
+  \Large
+  \[ x * y = y * x \quad \forall x,y. \]
+  \normalsize
+\item
+  Associativity: operation, *, is associative iff
+  \Large
+  \[ x*(y*z) = (x*y)*z \quad \forall x,y,z \]
+  \normalsize
+\item
+  Distributive property: operation, *, is distributive over operation \circ, iff \[\]
+  \Large
+  \[ x*(y\circ z) = (x * y)\circ(x * z) \quad \forall x,y,z \]
+  \normalsize
+
+\subsection{Modulo Arithmetic}
+
+Aritmetic modulo n returns the remainder after division by n. \\
+e.g.
+\Large
+\[ 3 +_6 5 = 2 \]
+\[ 3 \times_6 5 = 3 \]
+\normalsize
+both of these calculations are restricted to the set $\mathbb{Z}$ = \{0,1,2,3,4,5\} \\
+so $\mathbb{Z}$_n = \{0,1,\dots,n-1\}
+
+\paragraph{Definitions of a group}\mbox{}\\ \\
+
+\end{enumerate}
 \end{document}
