@@ -1,0 +1,43 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{graphicx}
+
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+
+\usepackage{mathtools}
+
+\makeatletter
+\renewcommand\thesection{}
+\renewcommand\thesubsection{\@arabic\c@section.\@arabic\c@subsection}
+\renewcommand\thesubsubsection{}
+\makeatother
+\newcommand{\mathsection}[1]{\paragraph{#1}\mbox{}\\}
+\newcommand\inv[1]{#1\raisebox{1.15ex}{$\scriptscriptstyle-\!1$}}
+
+\title{Further Pure 3 Notes}
+\author{Jacob Santry}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Header}
+\subsection{Sub}
+\normalsize
+\paragraph{paragraph}\mbox{}\\
+
+\end{document}
