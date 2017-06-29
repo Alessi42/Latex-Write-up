@@ -1,0 +1,125 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+
+\usepackage{mathtools}
+
+\makeatletter
+\renewcommand\thesection{}
+\renewcommand\thesubsection{\@arabic\c@section.\@arabic\c@subsection}
+\renewcommand\thesubsubsection{}
+\makeatother
+\newcommand\inv[1]{#1\raisebox{1.15ex}{$\scriptscriptstyle-\!1$}}
+
+\title{Core 3 Notes}
+\author{Jacob Santry}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Differentiation}
+\subsection{C1 Differentiation reminder}
+
+\[y=ax^n\]
+\[\Rightarrow \frac{dy}{dx}=anx^{n-1} \]
+\paragraph{Remember}\mbox{}\\
+$\frac{dy}{dx}$ is a measure of the rate of change of y compared to x. e.g. $\frac{dy}{dx}$=3 then y increases by 3 for every increase of 1 in x.\\
+If two lines are perpendicular the the product of their gradients is -1.
+
+\subsection{C2 Differentiation}
+Chain rule ( or "function of function rule") \\
+\[\frac{dy}{dx}=\frac{dy}{du}\times\frac{du}{dx}\]
+
+\begin{multicols}{3}
+\large
+\paragraph{Ex1}
+\[y=(3x+2)^5\]
+\[\text{let }u=3x+2\]
+\[\Rightarrow y=u^5 \]
+\[\frac{dy}{dx}=\frac{dy}{du}\times\frac{du}{dx}\]
+\[\frac{dy}{dx}=5u^4\times3\]
+\[\quad = 5u^4 \times 3 \]
+\[\quad = 15u^4 \]
+\[\quad = 15(3x+2)^4 \]
+
+\paragraph{Ex2}
+\[y=\sqrt{4x^2-1}\]
+\[\quad = (4x^2-1)^{\frac{1}{2}} \]
+\[\text{let }u = 4x^2 -1 \]
+\[\Rightarrow y=u^{\frac{1}{2}} \]
+\[\frac{dy}{dx}=\frac{dy}{du}\times\frac{du}{dx}\]
+\[\quad \frac{1}{2}u^{-\frac{1}{2}}\times 8x \]
+\[\quad \frac{4x}{(4x^2-1)^{\frac{1}{2}}} \]
+
+\paragraph{Ex3}
+\[y=\frac{1}{\sqrt[3]{5-4x}}\]
+\[\quad = (5-4x)^{-\frac{1}{3}} \]
+\[\text{let } u = 5-4x \]
+\[y=u^{-\frac{1}{3}} \]
+\[\frac{dy}{dx}=\frac{dy}{du}\times\frac{du}{dx}\]
+\[\quad = -\frac{1}{3}U^{\frac{-4}{3}}\times -4 \]
+\[\quad = \frac{4}{3}u^{-\frac{4}{3}} \]
+\[\quad = \frac{4}{3}(5-4x)^{-\frac{4}{3}} \]
+\normalsize
+\end{multicols}
+
+\paragraph{General Rule}\mbox{}\\
+If \[y=\big[ f(x) \big]^n\]
+then \[\frac{dy}{dx} = n \big[ f(x) \big]^{n-1} \times f'(x)\]
+\[y=(4x^2+9)^5\]
+\[\frac{dy}{dx} = 5(4x^2+9)^4 \times 8x\]
+\[\quad = 40x(4x^2+9)^4\]
+\\
+One particular example of our general rule is
+\[\text{if }y=(ax+b)^n \]
+\[\text{then }\frac{dy}{dx} = an(ax+b)^{n-1} \]
+and by considering intergration as the reverse of our differentiation we cna deduce that
+\large
+\[\int(ax+b)^n dx = \frac{(ax+b)^{n+1}}{a(n+1)}+c \quad \text{for } n\neq-1 \]
+e.g.
+\begin{enumerate}
+  \item
+  \[\int(2x+3)^5dx=\frac{(2x+2)^6}{2x+6}+c\]
+  \[\quad = \frac{(2x+3)^4}{12}+c \]
+  \item
+  \[\int^{2}_{-\frac{1}{3}} \frac{1}{\sqrt[3]{3x+2}}dx = \int^{2}_{-\frac{1}{3}} (3x+2)^{-\frac{1}{3}}dx \]
+  \[\quad = \bigg[\frac{(3x+2)^{\frac{2}{3}}}{2} \bigg]^{2}_{-\frac{1}{3}} \]
+  \[\quad = 2-\frac{1}{2} =\frac{3}{2} \]
+  \normalsize
+\end{enumerate}
+
+\paragraph{The link between $\frac{dy}{dx}$ and $\frac{dx}{dy}$}\mbox{}\\
+$\Big\lceil$ If $\frac{dy}{dx}$ = 4 then y is increasing 4 times as fast as x. This would mean that x is increasing $\frac{1}{4}$ times as fast as y.\\
+\[\text{i.e.} \frac{dy}{dx} = \frac{1}{4} \Big\rfloor \]
+Hence
+\[\Large
+\framebox[1.1\width]{
+$\frac{dy}{dx} = \frac{1}{\frac{dy}{dx}}$
+}
+\normalsize\]
+
+\begin{enumerate}
+  \item (Volume of a sphere $=\frac{4}{3}\pi r^3$)\\
+  The radius of a sphere is increasing at 2cm\inv{\text{s}}.\\
+  Find the rate of increase of volume at the instant that the radius is 5cm.
+  \item (Surface area of a sphere $=4\pi r^2$)
+\end{enumerate}
+\end{document}
