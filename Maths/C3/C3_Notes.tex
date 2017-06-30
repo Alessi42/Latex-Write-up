@@ -20,7 +20,7 @@
 \usepackage[colorlinks=true, allcolors=black]{hyperref}
 
 \usepackage{mathtools}
-
+\usepackage{pgfplots}
 \makeatletter
 \renewcommand\thesection{}
 \renewcommand\thesubsection{\@arabic\c@section.\@arabic\c@subsection}
@@ -105,12 +105,13 @@ e.g.
   \[\quad = 2-\frac{1}{2} =\frac{3}{2} \]
   \normalsize
 \end{enumerate}
-
+\normalsize
 \paragraph{The link between $\frac{dy}{dx}$ and $\frac{dx}{dy}$}\mbox{}\\
 $\Big\lceil$ If $\frac{dy}{dx}$ = 4 then y is increasing 4 times as fast as x. This would mean that x is increasing $\frac{1}{4}$ times as fast as y.\\
 \[\text{i.e.} \frac{dy}{dx} = \frac{1}{4} \Big\rfloor \]
 Hence
-\[\Large
+\[
+\Large
 \framebox[1.1\width]{
 $\frac{dy}{dx} = \frac{1}{\frac{dy}{dx}}$
 }
@@ -120,6 +121,112 @@ $\frac{dy}{dx} = \frac{1}{\frac{dy}{dx}}$
   \item (Volume of a sphere $=\frac{4}{3}\pi r^3$)\\
   The radius of a sphere is increasing at 2cm\inv{\text{s}}.\\
   Find the rate of increase of volume at the instant that the radius is 5cm.
+  \begin{multicols}{2}
+    \[\rightarrow \frac{dv}{dt} = \frac{dV}{dr} \times \frac{dr}{dt}\]
+    \[\]
+    \[V = \frac{4}{3}\pi r^3 \]
+    \[\frac{dv}{dt}=4\pi r^2 \]
+  \end{multicols}
+  \[\quad =4\pi r^2 \times 2\]
+  when $r=5$ \\
+  $\quad \frac{dV}{dt}=200 \pi cm^3\inv{s}$
   \item (Surface area of a sphere $=4\pi r^2$)
+  The surface area of a sphere is \underline{de}creasing at 40cm^2$\inv{s}. Find the rate of change of the radius at the instant the radius is 4cm.
+  \[\frac{dr}{dt} = \frac{dr}{dS}\times \frac{dS}{dt} \quad \text{Where S=surface area} \]
+  \begin{multicols}{2}
+    \[\frac{1}{\frac{dS}{dr}}\times \frac{dS}{dt} \]
+    \[\]
+    \[S=4\pi r^2 \]
+    \[\frac{dS}{dt} = 8\pi r\]
+  \end{multicols}
+  \[\frac{1}{8\pi r}\times -40 \]
+  When r=4, $\frac{dr}{dt} = \frac{-40}{32 \pi } = \frac{-5}{4\pi}$\\
+  rate of decrease of radius = $\frac{5}{4\pi} cm$\inv{s}$
 \end{enumerate}
+\paragraph{Exponential functions}\mbox{}\\
+Exponential functions have a variable as a power.
+\begin{multicols}{2}
+\paragraph{Ex1}
+\[Q=2\times3^t\]
+\[
+\begin{tabular}{l|lllll}
+${t}$ & 0 & 1 & 2  & 3  &  4 \\ \hline
+Q     & 2 & 6 & 18 & 54 & 162\\
+\end{tabular}
+\]
+\paragraph{Ex2}
+\[P=256\times\Big(\frac{1}{2}\Big)^t\]
+\[
+\begin{tabular}{l|lllll}
+${t}$ & 0 & 1 & 2  & 3  &  4 \\ \hline
+Q     & 256 & 128 & 64 & 32 & 16\\
+\end{tabular}
+\]
+\end{multicols}
+\bold{Note}- If $y=a\timesb^2$ then
+\begin{enumerate}
+\item $y=a$ When $t=0$
+\item For each equal interval of t the value of y is multiplied by the same amount.
+\end{enumerate}
+  \begin{tikzpicture}[scale=0.8]
+  \begin{axis}[
+      axis lines = left,
+      xticklabels={,,},
+      yticklabels={,,},
+      xlabel = $t$,
+      ylabel = {$Q$},
+      xmin=0,
+      ymin=0,
+  ]
+  \addplot [
+      domain=0:2,
+      samples=100,
+      color=black,
+  ]
+  {2*3^x};
+  \end{axis}
+  \end{tikzpicture}
+  \begin{tikzpicture}[scale=0.8]
+  \begin{axis}[
+      axis lines = left,
+      xticklabels={,,},
+      yticklabels={,,},
+      xlabel = $t$,
+      ylabel = {$P$},
+      xmin=0,
+      ymin=0,
+  ]
+  %Below the red parabola is defined
+  \addplot [
+      domain=0:6,
+      samples=100,
+      color=black,
+  ]
+  {256*0.5^x};
+  \end{axis}
+  \end{tikzpicture}
+
+\underline{Exponential Growth/Decay} - the rate of increase/decrease of the quantity is proportional to the amount present at that time.
+
+\begin{tikzpicture}[scale=0.8]
+\begin{axis}[
+    axis lines = left,
+    %xticklabels={,,},
+    %yticklabels={,,},
+    xlabel = $x$,
+    ylabel = {$y$},
+    xmin=0,
+    ymin=0,
+]
+\addplot [
+    domain=-1:16,
+    samples=100,
+    color=black,
+]
+{1.2^x};
+\draw (-30,90) node[anchor=north west] {$a^{x+\delta x}$};
+\end{axis}
+\end{tikzpicture}
+This is quite hard...
+
 \end{document}
