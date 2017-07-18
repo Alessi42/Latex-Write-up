@@ -1,0 +1,128 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\renewcommand{\familydefault}{\sfdefault}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+
+%% Tables
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\lhead{Jacob Santry}
+\rhead{Info 4 Project}
+\cfoot{\thepage }
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\title{Info 4 Project}
+\author{Jacob Santry}
+
+\begin{document}
+\thispagestyle{empty}
+\maketitle
+
+\tableofcontents
+
+\section{Background and Investigation}
+
+	\subsection{Introduction}
+    For my project I will be creating a solution for Ian Gill, a television producer and editor working for a large UK television company for the past 7 years. Ian also works as a personal trainer and fitness instructor, he has been a personal trainer and running classes for the past 3 years both at a Peele Leisure Centre (a local fitness centre) as well as putting together lunch classes for the people with whom he works with. Around 30 people attend the classes he teaches every fortnight, he also has around half a dozen people who he works with one to one as a personal trainer helping all aspects of fitness for a range of abilities, the majority of those who Ian trains are those looking to lose weight or get back into a fit lifestyle and are wanting to improve themselves. Ian also combines his work as a television producer to make personal training videos where he films himself completing sets of workouts similar to what he would do with a client, he started these as a way for clients have exercises to complete whist away which he then moved to social media. He uploads his workout videos every when he can around one per week to social media where many people enjoy and complete his workouts; as a result Ian has amassed a large online following of ~1000 people who view the videos he produces from which he makes a small profit from advertising and business though introducing people to his personal training services.
+
+	\subsection{Current System}
+	Currently Ian runs a regular class at the Peele Leisure Centre in long Sutton every fortnight on a Friday evening at 8:30, the fitness centre handles the booking and payment of the classes whilst Ian puts on the classes and is payed through the Centre. The classes Ian does are HIIT workouts (High-intensity interval training), where he will have short bursts of exercise followed by a short break repeatedly one of the defining features of Ian’s workouts is the challenges he does throughout the workout of how many reps you can complete in a minute, which he has found to be great for incentivising progress in the people who come back to his classes. Ian also runs a smaller version of his classes at lunch for the people he works with he makes these classes easier than his regular classes but still incorporates his challenges into the workouts, many of the people who goes to the classes he does at work also have come to his regular classes on a Friday as a result. Ian also when he finds the time films and edits the workout videos that he posts to social media, he films himself with a Canon 80D camera setup on a tripod in either the nearby park or in his gym room at home. The videos on average are ~10-20 minutes long depending on the workout and the time he has for filming, the videos are lightly edited with text about the exercise and duration using adobe premiere pro, with his skillset as a television editor the videos look professional and are easy to follow.
+TODO: Fill out.
+
+	\subsection{Client, User and Audience}
+	Client- The client for the solution will be Ian Gill, a television producer and personal trainer who requires the solution to improve how people consume the video content that he produces and puts on the internet with an interactive app with an unlock progress system to incentivise people to workout and see the progress which they make similarly to his personal classes. \\
+User- The users of the system will be Ian who will upload the videos via a web interface as well as adding details about what is required to unlock the workout, details about the workout as well as any other images that are associated with the workout and are required for the UI of the solution, as well as timestamps for the start and end of the challenges that he puts into the workouts so that the app can prompt the user to enter how they performed. The users of the system could increase to include others that Ian wishes to upload workouts or to manage the workouts if he is unable to. \\
+Audience- The audience of the solution will be those who install the app and use it to workout alongside the videos they when they complete workouts data will be generated tracking how far they got through the video as well as the details about how they did during the challenges throughout the workout which will be part of the data showing their improvement over time.
+
+	\subsection{Why the solution is required}
+	The reason Ian requires the solution is to be able to expand and improve how people view his workouts, the personal training industry is worth over \$9bn with a survey in March 2014 finding “18 percent of internet users were accessing or were planning to use a mobile health or fitness app on a weekly basis.” With the app market being valued at \$77 Billion there is a large market which Ian would like to expand into, creating an interactive app could also be a big improvement on how he currently puts out his content with the interactive and ability of a dedicated app to track the progress that people make when following his workouts he can help people to improve which is important to him and why he began personal training. The app can be monetised through an upfront payment when the user installs the app, the exposure will also be good for Ian’s classes as well as his personal training. Through connections working in television Ian also wishes to, in the future expand the app to feature other trainers and celebrities the solution will help create a following and proof of concept behind the idea to help make this a possibility. TODO: Expand upon this.
+
+ 	\subsection{Investigation into the current system}
+
+	\todo[inline,backgroundcolor=blue!25,bordercolor=blue]{I have had ~15 or so emails with him as well as a 20 minute phone call which I recorded when we first talked about the possibility of the project I will need to write these up more formally.}
+
+	\subsection{Client Requirements}
+	\begin{tabular}{| c | L{4cm} | L{8cm} |}
+	\hline
+		Requirement & Description & Detailed Description\\ \hline
+	QN1&
+	The system should track the workouts that the user completes &
+	The system should record what workouts a user completes along with the number of reps they completed during any challenges to see how many reps they can complete throughout the workout \\
+	\hline
+	QN2&
+	The user should be able to see the progress they are making though graphs and or a list of the workouts they completed with details&
+	The system should show graphs of how a user is progressing with the workouts that they are completing with previous bests as well as how they’re improving in the challenges they complete. \\
+	\hline
+    QN3&
+    The system should have 4 classes of workouts that the user can select from &
+    Similarly to how Ian runs his personal training the workouts should be grouped into, different types, cardio, arms, legs and abs. \\
+    \hline
+    QN4&
+    The solution should show information about the workout before the user begins such as its difficulty and length&
+    The system when a user selects a workout to complete should show some details about it such as the amount or type of challenges that are in the workout and how long the video is \\
+    \hline
+    QN5&
+    The videos should have an overlay to display the time into the workout as well as a way to enter details about the workout and an option to take a break or quit.&
+    The solution should have a simple overlay timer for both the full workout as well as a countdown for the duration of the challenges throughout the workout, there should be an option to pause the workout as well as being able to quit. This UI should also show where the user has reached previous times PB etc. where appropriate. \\
+    \hline
+    QN6&
+   	The videos should have an offline option for people that have no or limited internet connectivity&
+    There should be the option to download videos for offline watching or a separate workout screen which instead shows the workouts and plays the audio for the video\\
+    \hline
+    QL7&
+    The app should have a professional clean looking appearance.&
+    The app should use colours from the agreed upon colour palette and be easy to use with a simple non-cluttered appearance\\
+    \hline
+	\end{tabular}
+\\ \\
+\footnotesize QN- Quantitative Requirement\\
+\footnotesize QL- Qualitative Requirement
+    \todo[inline,backgroundcolor=blue!25,bordercolor=blue]{more client requirements to add, simply the basics so far.}
+
+\section{Analysis and Deliverables}
+
+	\subsection{Scope of the project}
+	There is a brief statement of the scope of the project.
+
+	\subsection{Proposed system}
+	A superficial description of the proposed system is included.
+    Some deliverables have been referred to in the report showing some idea of what should be produced.
+
+ 	\subsection{**Processes**}
+	Processes have been identified and some understanding of what is involved in the new system is shown.
+
+	\subsection{User Skills}
+	An attempt to identify the skills of a user or some users.
+
+	\subsection{Solution Criteria}
+	Both qualitative and quantitative evaluation criteria have been included showing understanding of the need for the objective assessment of a solution.
+
+\section{Design and Planning for Implementation}
+
+	\subsection{Alternative design solutions}
+	Alternative design solutions to the problem have been investigated.
+
+\subsection{}
+%% \bibliographystyle{alpha}
+%% \bibliography{sample}
+
+\end{document}
